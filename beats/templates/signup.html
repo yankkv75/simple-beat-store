@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+	Sign Up | NeskkoBeats
+{% endblock %}
+
+{% block content %}
+
+	<div class="sign-up">
+		{% if not form.is_valid %}
+			<div>
+				<br>
+				<h1 class="product_title text-center">
+					Create a new account
+				</h1>
+				<div class="col-9 col-sm-9 col-md-6 col-lg-5 mx-auto">
+					<form method="post">
+                        {% csrf_token %}
+						<p>{{  form | crispy }}
+						    <button type="submit" class="btn btn-dark">Sign Up</button>
+                        </p>
+					</form>
+
+				</div>
+			</div>
+		{% else %}
+		<div class="mx-auto">
+			<br>
+			<h1 class="product_title text-center">
+				Your account has been successfully created
+			</h1>
+			<br>
+			<div>
+				<p>Your account has been created and ready to use!</p>
+				<br>
+				<a href="{% url 'home' %}">Continue </a>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+
+
+{% endblock %}

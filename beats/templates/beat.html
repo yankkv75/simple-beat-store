@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+    {{beat.name}} | NeskkoBeats
+{% endblock  %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row text-align-center beat-img">
+        <div class="col-10 mx-auto col-md-4 my-3">
+            <img class="beat-img card-img-top about-beat" src="{{ beat.image.url }}">
+            <div class="d-flex flex-row-reverse">
+                <a class="nav-link px-2 text-end" target="_blank" href="{{ beat.youtube }}">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="nav-link px-2 text-end" target="_blank" href="{{ beat.instagram }}">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="nav-link px-2" href= "{{ beat.audio_file.url }}" download >
+                    <i class="fas fa-download"></i>
+                </a>
+                <a class="nav-link px-2" href= "{% url 'add_cart' beat.id %}">
+                    <i class="fas fa-cart-plus"></i>
+                </a>
+            </div>
+        </div>
+        <div class="beat_title text-center">
+            <h1>{{beat.artist}} - {{beat.name}}</h1>
+        </div>
+        <div class="beat_player text-center">
+            <audio controls>
+                <source src="{{ beat.audio_file.url }}" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="container text-muted text-center beat-free">
+            <p>Beat free for non-commercial use, do not register
+                your material on any digital platform (itunes, spotify deezer etc.)
+                 Also monetize on youtube.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

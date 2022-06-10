@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Sign In | NeskkoBeats
+{% endblock %}
+
+{% block content %}
+
+    <div class="container sign-in">
+        <h1 class="product_title text-center">
+            <br/>
+            Login or Create a new account
+        </h1>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-lg-6 text-center sign-in-div">
+                <h2 class="product_title">
+                    New user
+                </h2>
+                <a href="{% url 'signup' %}" class="btn btn-dark sign-in-btn">Create new account</a>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 bg-light">
+                <div>
+                    <br/>
+                    <h2 class="product_title">
+                        Registered users only
+                    </h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <p>{{  form | crispy }}
+                            <br/>
+						    <button type="submit" class="btn btn-dark ">Sign In</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

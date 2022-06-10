@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+/* Carousel home page */
+.carousel {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Cards with beats home page*/
+.beat-card p {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+.view-btn {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+/* Licensing options */
+.prices {
+    font-family: 'Roboto', sans-serif;
+}
+
+.prices h1 {
+    font-weight: bold;
+}
+
+.price-for-type {
+    font-weight: bold;
+}
+
+.format {
+    font-weight: bold;
+}
+
+/* Carousel home page */
+li {
+    list-style-type: none;
+}
+
+
+
+/* beat page*/
+
+.beat-links a, i {
+    text-decoration: none;
+    color: #595757FF;
+}
+
+.beat-links a, i:hover {
+    color: #1C1C1CFF;
+}
+
+.beat_title h1 {
+    margin-bottom: 30px;
+
+}
+
+audio {
+    width: 500px;
+}
+
+.beat_player {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+

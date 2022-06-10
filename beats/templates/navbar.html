@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg  ">
+  <a href="/" class="navbar-brand">Neskko Beats</a>
+  {% if request.user.is_authenticated and request.user.username %}
+  <li class="nav-item">
+    <span class="nav-link text-dark fw-light px-3">
+      {{ request.user.username }}
+      <i class="fas fa-user-circle"></i>
+    </span>
+  </li>
+  {% endif %}
+  <div id="navbar" class="collapse navbar-collapse justify-content-right navbar-content">
+      <ul class="navbar-nav d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <div class="d-flex flex-row-reverse bd-highlight">
+            {% if request.user.is_authenticated and request.user.username %}
+            <li class="nav-item">
+                <a class="nav-link text-light fw-light px-3" href="{% url 'signout' %}">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </li>
+            {% else  %}
+            <li class="nav-item">
+                <a class="nav-link text-light fw-light px-3" href="{% url 'signup' %}">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light fw-light px-3" href="{% url 'signin' %}">
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
+            </li>
+            {% endif %}
+
+            <li class="nav-item">
+                <a class="nav-link text-light fw-light px-3" href="{%  url 'cart_detail' %}">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </li>
+            </div>
+        <li class="nav-item"><a class="nav-link fw-light px-2" href="#anchor">Beats</a></li>
+        <li class="nav-item"><a href="#anchor1" class="nav-link fw-light px-2">Licensing Options</a></li>
+        <li class="nav-item"><a class="nav-link fw-light px-2" href="#">Contact</a></li>
+
+        <li class="nav-item inst">
+          <a class="nav-link px-2" target="_blank" href="https://www.instagram.com/neskko_/">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link px-2" target="_blank" href="https://www.youtube.com/channel/UCCESPvErIMg6nwRoRJ06IgA">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link px-2" target="_blank" href="https://soundcloud.com/neskkobeats">
+                <i class="fab fa-soundcloud"></i>
+            </a>
+        </li>
+
+        <li class="nav-tem">
+          <a class="nav-link px-2 gmail" target="_blank" href="mailto:beatsbyneskko@gmail.com">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+
+  </div>
+</nav>

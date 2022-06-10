@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-footer {
+    height: 60px;
+    background-color: #f8f8f8;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-footer p {
+    margin-left: 10%;
+    color: #a9aaa9;
+}
+
+.nav-footer a {
+    text-decoration: none;
+    color: #444444;
+}
+
+.nav-footer a:hover {
+    color: #1b1b1b;
+}
+
+.foot-links {
+    margin-right: 10%;
+}
+
+.foot-links i {
+    color: #a9aaa9;
+}
+
+.foot-links i:hover {
+    color: #1b1b1b;
+}

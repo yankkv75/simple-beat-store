@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    background-color: rgba(204, 204, 204, 0.93);
+}
+
+.navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.nav-item {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #232323ED;
+}
+
+.navbar a:hover {
+    color: #1b1b1b;
+}
+
+
+.navbar-brand {
+    margin-left: 1%;
+}
+
+.navbar-content {
+    margin-right: 2%;
+}
+
+.inst {
+    margin-left: 25px;
+}

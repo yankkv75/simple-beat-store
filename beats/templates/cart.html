@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block title %}
+    Cart | NeskkoBeat
+{% endblock %}
+
+{% block content %}
+
+    {% if not cart_items %}
+        <div class="text-center">
+            <h1>
+                Cart is empty
+            </h1>
+                <p>Click <a href="{% url 'home' %}">here</a> to go back to products</p>
+        </div>
+
+
+    {% else %}
+        <div class="text-center">
+                <div class="text-center">
+                    <h1>Cart Review</h1>
+                </div>
+            <div class="row mx-auto">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-start">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="4">
+                                    Items
+                                </th>
+                            </tr>
+                        </thead>
+                        {% for cart_item in cart_items %}
+                        <tr>
+                            <td>
+                                <a href="{{cart_item.beat.get_url}}">
+                                    <img src="{{ cart_item.beat.image.url }}" width="100" height="100">
+                                </a>
+                            </td>
+                            <td >
+                                {{ cart_item.beat.name }}
+                                <br/>
+                                Price: $ {{ cart_item.beat.price }}
+                                <br/>
+                                Licensing type: Basic
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                                $ {{ cart_item.full_sum }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-start">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="4">
+                                    Cart Summary
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">
+                                    Check your cart before payment
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-start">
+                                    Total Gross: <strong>${{ total }}</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+
+{% endblock %}

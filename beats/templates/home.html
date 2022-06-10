@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block title %}
+    Home | NeskkoBeats
+{% endblock  %}
+
+{% block content %}
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner carousel">
+        <div class="carousel-item active">
+            <img src="{%static 'images/first-slide.png'%}" class="d-block w-100" alt="11111">
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h2>Fair Trade</h2>
+                    <p class="text-muted">Free for non-commercial use, do not register your material on any digital platform</p>
+                    <p><a href="http://127.0.0.1:8000/category/beat/fair-trade"><button type="button" class="btn btn-outline-dark">Listening</button></a></p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{%static 'images/second-slide.png'%}" class="d-block w-100" alt="222222">
+            <div class="container">
+                <div class="carousel-caption ">
+                    <h2>Off The Grid</h2>
+                    <p class="text-muted">Free for non-commercial use, do not register your material on any digital platform</p>
+                    <p><a href="http://127.0.0.1:8000/category/beat/off-the-grid"><button type="button" class="btn btn-outline-dark">Listening</button></a></p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{%static 'images/third-slide.png'%}" class="d-block w-100" alt="3333333333">
+            <div class="container">
+                <div class="carousel-caption text-end ">
+                    <h2>How It Feel</h2>
+                    <p class="text-muted">Free for non-commercial use, do not register your material on any digital platform</p>
+                     <p><a href="http://127.0.0.1:8000/category/beat/how-it-feels"><button type="button" class="btn btn-outline-dark">Listening</button></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                {% for beat in beats %}
+                <div class="col mb-5 beat-card">
+                    <div class="card h-100 " id="anchor">
+                        <a><img class="card-img-top" src="{{ beat.image.url }}" alt="{{beat.name}}"></a>
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <p>{{beat.artist}} - {{beat.name}}</p>
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto view-btn" href="{{beat.get_url}}">View full</a></div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% include 'pricing.html' %}
+
+{% endblock %}
