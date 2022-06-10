@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'neskkobeatsdb',
         'USER': 'postgres',
-        'PASSWORD': '321qwerty',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432'
     }
